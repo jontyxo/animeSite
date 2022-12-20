@@ -1,0 +1,8 @@
+.player-video{
+    width: 800px
+}
+.streamEp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

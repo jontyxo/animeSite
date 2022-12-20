@@ -1,0 +1,27 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color:#EEEEEE;
+    color:#000;
+    font-family: 'Chivo Mono', monospace;
+    padding: 2%;
+    margin-bottom: 5rem;
+  
+}
+.nav-item{
+    margin-right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+.nav-item:hover{
+    color: rgb(212, 212, 212);
+}
+.left-nav{
+    display: flex;
+}
+input{
+    padding: 5px 40px;
+    border-radius: 20px;
+}

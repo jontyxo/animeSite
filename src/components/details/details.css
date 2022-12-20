@@ -1,0 +1,26 @@
+.animeDetails{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 6%;
+    color: #fff
+}
+img{
+    width: 300px;
+}
+.right{
+    width: 40%;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+}
+span{
+    font-family: 'Roboto', sans-serif;
+}
+.animeTitle{
+    font-size:36px;
+    font-weight: 600;
+}
+.PuffLoaderParent{
+    display:flex;
+    justify-content: center;
+}

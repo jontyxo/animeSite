@@ -1,0 +1,39 @@
+.anime-poster{
+    width:75%;
+    margin-top: 20px;
+}
+.card{
+    margin: 3% 5%;
+    display: flex;
+    align-items:center;
+    background-color:#0000;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border:none !important;
+}
+.home-anime{
+    display:grid;
+    
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.anime-title{ 
+
+    font-size: 24px;
+    font-weight: bolder;
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1rem 2rem;
+    color: #fff;
+}
+.loading{
+    font-size: 40px;
+    z-index: 999;
+    color: #fff;
+}
+.headerTitle{
+    margin-left: 25px;
+    font-size: 30px;
+    font-family: 'Chivo Mono', monospace;
+    color: #fff;
+}

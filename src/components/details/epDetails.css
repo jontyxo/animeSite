@@ -1,0 +1,16 @@
+.eplist{
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+}
+.pepDetails{
+
+    border-radius: 8px;
+    background: #fff;
+    padding: 0.5rem 5rem;
+    margin-bottom: 2rem;
+    font-family: 'Chivo Mono', monospace;
+    cursor: pointer;
+    font-weight: 100;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
