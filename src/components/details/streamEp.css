@@ -5,4 +5,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
+}
+.streamEpP{
+    padding: 2rem 1rem;
+}
+.streamButtons{
+    margin: 0rem 5rem;
+}
+.iframe{
+    margin: 3rem 0rem;
 }

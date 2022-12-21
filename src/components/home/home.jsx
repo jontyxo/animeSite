@@ -18,7 +18,7 @@ const [myData,setMyData]=useState([]);
 const [loading,setLoading]=useState(false);
 let arr=[];
 const fetch=async()=>{
-  for(let i=1;i<=6;i++){
+  for(let i=1;i<=3;i++){
     const result =await axios.get("https://gogoanime2.p.rapidapi.com/popular?page="+i)
    arr.push(...result.data);
     }

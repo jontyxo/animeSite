@@ -10,8 +10,8 @@ import "./streamEp.css"
 function StreamEp() {
 const navigate=useNavigate();
 
-const{id} =useParams();
-const{episodeNum} =useParams();
+let{id,episodeNum} =useParams();
+
 const [epLink,setEpLink] = useState();
 const [epId,setEpId]=useState();
 const [loading,setLoading]=useState(false);
@@ -21,22 +21,18 @@ const fetch=async()=>{
      setEpLink(result.data.Referer)
      setEpId(epLink.slice(36, 44));
     setLoading(false)
-
-
-        
-   
-    
-   
 }
+
 useEffect(() => {
   setLoading(true)
     fetch();
     
 },[epLink,epId])
 const handleClick=async()=>{
-   navigate(`//gogohd.net/streaming.php?id=${epId}&title=${id}+Episode+${episodeNum}&typesub=SUB`)
+   window.open(`${epLink}`)
     
 }
+
 
   return (
     <>
@@ -56,15 +52,19 @@ const handleClick=async()=>{
         ):
         (
             <>
-
-           
-    <div className="streamEp"> 
+ <div className="streamEp"> 
     <h1>{id}</h1>
-            Watch Ep {episodeNum} here:
-<button onClick={handleClick} className="btn btn-light">
-    click
-</button>
+           <p className="streamEpP"> Watch Ep {episodeNum} here: </p>
+           <div>
+    {/* <button disabled={{episodeNum}===1} className="btn btn-light streamButtons" >Prev Episode</button>
+    <button className="btn btn-light streamButtons">Next Episode</button> */}
+
     </div>
+<iframe width="50%" height="500px" src={epLink} frameborder="0" allowFullScreen className='iframe'></iframe>
+
+    </div>
+    
+
             </>
         )
     }

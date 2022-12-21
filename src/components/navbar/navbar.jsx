@@ -23,7 +23,9 @@ function Navbar() {
         <input type="text" placeholder="Search" ref={name}/>
       </form>
         </div>
-        <div className="right-nav"><button className="btn btn-success" >Github</button></div>
+        <div className="right-nav"><button className="btn btn-success" onClick={()=>{
+          window.open("https://github.com/jontyxo/animeSite",'_blank')
+        }} >Github</button></div>
 
     </div>
   )
