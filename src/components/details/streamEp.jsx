@@ -1,13 +1,15 @@
 import axios from 'axios';
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState,useContext} from 'react'
 import {useParams} from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 import PuffLoader from "react-spinners/PuffLoader";
-import Footer from '../footer/footer';
+
 
 import "./streamEp.css"
 
 function StreamEp() {
+  let lastEp=localStorage.getItem("lastEp")
+  
 const navigate=useNavigate();
 
 let{id,episodeNum} =useParams();
@@ -29,14 +31,18 @@ useEffect(() => {
     
 },[epLink,epId,episodeNum])
 
-const prevEp=()=>{
-  episodeNum=(Number(episodeNum)-1);
+const prevEp=(e)=>{
+  if(episodeNum!=1){ 
+    episodeNum=(Number(episodeNum)-1);
  
-  navigate(`/details/watch/${id}/${episodeNum}`)
-
+    navigate(`/details/watch/${id}/${episodeNum}`)
 }
-
-const nextEp=()=>{
+else if(episodeNum===1){
+  e.currentTarget.disabled = true;
+} 
+ 
+}
+const nextEp=(e)=>{
   episodeNum=(Number(episodeNum)+1);
   navigate(`/details/watch/${id}/${episodeNum}`)
 
@@ -65,8 +71,8 @@ const nextEp=()=>{
     <h1>{id}</h1>
            <p className="streamEpP"> Watch Ep {episodeNum} here: </p>
            <div>
-    <button disabled={{episodeNum}===1} className="btn btn-light streamButtons" onClick={prevEp}>Prev Episode</button>
-    <button className="btn btn-light streamButtons" onClick={nextEp}>Next Episode</button>
+    <button disabled={episodeNum==1} className="btn btn-light streamButtons" onClick={prevEp}>Prev Episode</button>
+    <button disabled={episodeNum===lastEp} className="btn btn-light streamButtons" onClick={nextEp}>Next Episode</button>
 
     </div>
 <iframe width="50%" height="500px" src={epLink} frameborder="0" allowFullScreen className='iframe'></iframe>

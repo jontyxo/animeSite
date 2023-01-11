@@ -12,6 +12,9 @@ import Footer from '../footer/footer';
 
 
 function EpDetails() {
+
+
+
 const{id} =useParams();
 const navigate=useNavigate();
 
@@ -33,19 +36,22 @@ fetch();
       const result=await axios.get(`https://gogoanime2.p.rapidapi.com/anime-details/${id}`)
      
       
-   console.log(result.data)
+   
         setEpList(result.data.episodesList)
+       
+        localStorage.setItem("lastEp",result.data.episodesList.length)
+        
   setLoading(false)
+
 
                  
   
     }
   return (
-    <>
+  
 
-   
-    
-          {
+    <>
+      {
             loading ? 
             (
               <div className="PuffLoaderParent">
@@ -61,6 +67,7 @@ fetch();
     </div>
             ) : (
               <div className="eplist">
+              
               <div>
           {
             epList.map((episode)=>{
@@ -88,6 +95,7 @@ fetch();
           }
         
     </>
+   
   )
 }
 
